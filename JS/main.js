@@ -126,17 +126,19 @@ function login(){
     fillMsgInput.classList.replace("d-none","d-block")
     wrongMsgInput.classList.replace("d-block","d-none")
   }
-  for(let i=0 ; i<container.length ; i++){
-    if(container[i].email.toLowerCase()==loginEmailInput.value&&container[i].password.toLowerCase()==loginPasswordInput.value){
-      localStorage.setItem("name-user",container[i].name)
-      loginInput.setAttribute("href","welcom/welcom.html" )
-      wrongMsgInput.classList.replace("d-block","d-none")
-
-    }
-    else{
-      wrongMsgInput.classList.replace("d-none","d-block")
-      fillMsgInput.classList.replace("d-block","d-none")
-
+  else{
+    for(let i=0 ; i<container.length ; i++){
+      if(container[i].email.toLowerCase()==loginEmailInput.value&&container[i].password.toLowerCase()==loginPasswordInput.value){
+        localStorage.setItem("name-user",container[i].name)
+        loginInput.setAttribute("href","welcom/welcom.html" )
+        wrongMsgInput.classList.replace("d-block","d-none")
+  
+      }
+      else{
+        wrongMsgInput.classList.replace("d-none","d-block")
+        fillMsgInput.classList.replace("d-block","d-none")
+  
+      }
     }
   }
 }
