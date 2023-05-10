@@ -1,0 +1,20 @@
+a{
+    color: #fff;
+}
+a:hover{
+    color: rgb(0, 208, 255);
+}
+input{
+    color:#fff !important ;
+    background-color: transparent !important;
+}
+::placeholder{
+    color: #ffffff9b !important;
+}
+.welcom-mass{
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    padding: 20px 0px ;
+    box-shadow: 10px 10px  20px rgb(0, 242, 255);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="login bg-dark vh-100 d-flex justify-content-center align-items-center">
+        <div class="shadow-lg w-50 h-50  bg-dark shadow text-center p-5">
+            <h1 class="text-info mb-3">Smart Login System</h1>
+            <input class="form-control my-3" id="sign-name" oninput="usernameValidation()" type="text" placeholder="Enter your name">
+            <p id="usernameAlert" class="d-none text-danger">include at least 3 letters starting with capital, second name is optional</p>
+            <p id="usernameExist" class="d-none text-danger">The user name exist</p>
+            <input class="form-control my-3" id="sign-email" oninput="emailValidation()" type="email" placeholder="Enter your email">
+            <p id="userEmailAlert" class="d-none text-danger">name@example.com</p>
+            <input class="form-control  my-3" id="sign-password" oninput="passwordValidation()" type="password" placeholder="Enter your password">
+            <p id="userPasswordAlert" class="d-none text-danger m-0">you must strenth your password, from 5 to 15 characters</p>
+            <p id="exist"></p>
+            <button class="btn w-100 btn-outline-info my-4" id="btn-sign" onclick="signUp()">Sign Up</button>
+            <p class="text-white d-inline-block">You have an account?</p>
+            <a href="../index.html">Sign in</a>
+            
+            
+        </div>
+    </div>
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="../JS/main.js"></script>
+</body>
+</html>
