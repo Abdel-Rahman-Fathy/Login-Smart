@@ -16,7 +16,7 @@ if (localStorage.getItem("users") == null) {
 }
 
 //-------------------------------------------------------------------------------> Sign Up Function
- function signUp(){
+function signUp() {
   if (validationInputUser() == true && isExist() == false) {
     let user = {
       name: usernameInput.value,
@@ -25,16 +25,19 @@ if (localStorage.getItem("users") == null) {
     };
     container.push(user); //array of Object
     localStorage.setItem("users", JSON.stringify(container)); //add in local and covert to string
-    document.getElementById("exist").innerHTML = `<span class="text-success">Success</span>`;
-  } else if(isExist() == true) {
-    document.getElementById("exist").innerHTML = `<span class="text-danger">email or user already exists</span>`;
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-success">Success</span>`;
+  } else if (isExist() == true) {
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-danger">email or user already exists</span>`;
+  } else {
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-danger">signUp failed ! Try again</span>`;
   }
-  else{
-    document.getElementById("exist").innerHTML = `<span class="text-danger">signUp failed ! Try again</span>`;
-
-  }
-};
-
+}
 
 //-------------------------------------------------------------------------------> User Validation
 function usernameValidation() {
@@ -44,13 +47,15 @@ function usernameValidation() {
     usernameInput.classList.add("is-valid");
     usernameInput.classList.remove("is-invalid");
     usernameAlert.classList.replace("d-block", "d-none");
-    
+
     return true;
   } else {
     usernameInput.classList.add("is-invalid");
     usernameInput.classList.remove("is-valid");
     usernameAlert.classList.replace("d-none", "d-block");
-    document.getElementById("exist").innerHTML = `<span class="text-danger"></span>`;
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-danger"></span>`;
 
     return false;
   }
@@ -68,7 +73,9 @@ function passwordValidation() {
     passwordInput.classList.add("is-invalid");
     passwordInput.classList.remove("is-valid");
     userPasswordAlert.classList.replace("d-none", "d-block");
-    document.getElementById("exist").innerHTML = `<span class="text-danger"></span>`;
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-danger"></span>`;
 
     return false;
   }
@@ -86,7 +93,9 @@ function emailValidation() {
     emailInput.classList.add("is-invalid");
     emailInput.classList.remove("is-valid");
     userEmailAlert.classList.replace("d-none", "d-block");
-    document.getElementById("exist").innerHTML = `<span class="text-danger"></span>`;
+    document.getElementById(
+      "exist"
+    ).innerHTML = `<span class="text-danger"></span>`;
     return false;
   }
 }
@@ -119,33 +128,31 @@ function isExist() {
 }
 //-------------------------------------------------------------------------------> User Validation
 
-let userName=localStorage.getItem("name-user")
-function login(){
+let userName = localStorage.getItem("name-user");
+function login() {
   //empty inputs
-  if(loginEmailInput.value==""||loginPasswordInput.value==""){    
-    fillMsgInput.classList.replace("d-none","d-block")
-    wrongMsgInput.classList.replace("d-block","d-none")
-  }
-  else{
-    for(let i=0 ; i<container.length ; i++){
-      if(container[i].email.toLowerCase()==loginEmailInput.value&&container[i].password.toLowerCase()==loginPasswordInput.value){
-        localStorage.setItem("name-user",container[i].name)
-        loginInput.setAttribute("href","welcom/welcom.html" )
-        wrongMsgInput.classList.replace("d-block","d-none")
-  
-      }
-      else{
-        wrongMsgInput.classList.replace("d-none","d-block")
-        fillMsgInput.classList.replace("d-block","d-none")
-  
+  if (loginEmailInput.value == "" || loginPasswordInput.value == "") {
+    fillMsgInput.classList.replace("d-none", "d-block");
+    wrongMsgInput.classList.replace("d-block", "d-none");
+  } else {
+    for (let i = 0; i < container.length; i++) {
+      if (
+        container[i].email.toLowerCase() == loginEmailInput.value &&
+        container[i].password.toLowerCase() == loginPasswordInput.value
+      ) {
+        localStorage.setItem("name-user", container[i].name);
+        loginInput.setAttribute("href", "welcom/welcom.html");
+        wrongMsgInput.classList.replace("d-block", "d-none");
+      } else {
+        wrongMsgInput.classList.replace("d-none", "d-block");
       }
     }
   }
 }
 //-------------------------------------------------------------------------------> display massage welcom
-function getUser(){
-  document.getElementById("welcomMassage").innerHTML=`welcome ${userName}`
+function getUser() {
+  document.getElementById("welcomMassage").innerHTML = `welcome ${userName}`;
 }
-function logOut(){
-  localStorage.removeItem("name-user")
+function logOut() {
+  localStorage.removeItem("name-user");
 }

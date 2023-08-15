@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body >
+<body>
     <div class="login bg-dark vh-100 d-flex justify-content-center align-items-center ">
-        <div class="shadow-lg w-50 bg-dark text-center p-5">
-            <h1 class="shadow-lg text-info mb-3">Smart Login System</h1>
-            <input class="form-control my-3" id="login-email" type="email" placeholder="Enter your email">
-            <input class="form-control  my-3" id="login-password" type="password" placeholder="Enter your password">
-            <p class="text-danger d-none " id="fillMsg">fill the inputs first</p>
-            <p class="text-danger d-none" id="wrongMsg">your email or password is incorrect</p>
-            <a class="btn w-100 btn-outline-info my-4"  id="btn-login" onclick="login()">Login</a>
-            <p class="text-white d-inline-block">Don’t have an account?</p>
-            <a href="Sign up/Sign up.html">Sign Up</a>
-            
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="shadow-lg  bg-dark text-center p-5">
+                        <h1 class="shadow-lg text-info mb-3">Smart Login System</h1>
+                        <input class="form-control my-3" id="login-email" type="email" placeholder="Enter your email">
+                        <input class="form-control  my-3" id="login-password" type="password" placeholder="Enter your password">
+                        <p class="text-danger d-none " id="fillMsg">fill the inputs first</p>
+                        <p class="text-danger d-none" id="wrongMsg">your email or password is incorrect</p>
+                        <a class="btn w-100 btn-outline-info my-4"  id="btn-login" onclick="login()">Login</a>
+                        <p class="text-white d-inline-block">Don’t have an account?</p>
+                        <a href="Sign up/Sign up.html">Sign Up</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="JS/bootstrap.bundle.min.js"></script>
